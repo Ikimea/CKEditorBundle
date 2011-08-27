@@ -1,4 +1,7 @@
-twig.extension.ckeditor:
+services:
+  twig.extension.ikimea_ckeditor:
     class: Ikimea\CKEditorBundle\Twig\Extension\IkimeaCKEditorExtension
+    argument:
+      -  { type: service, id: service_container } 
     tags:
       - { name: twig.extension }

@@ -16,7 +16,13 @@ class Configuration {
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('ikimea_ckeditor', 'array');
-        
+        $rootNode
+            ->children()
+                ->scalarNode('config')
+                    ->children()
+                        ->scalarNode('lang')->cannotBeEmpty()->end()
+
+                ->end();
         return $treeBuilder->buildTree();
     }
     

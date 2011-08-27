@@ -1,20 +1,20 @@
-<?php 
-
+<?php
 
 /*
-* This file is part of CKeditorBundle
-* (c) 2011 Mbechezi Mlanawo
-*
-* For the full copyright and license information, please view the LICENSE
-* file that was distributed with this source code.
-*/
+ * This file is part of CKeditorBundle
+ * (c) 2011 Mbechezi Mlanawo
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-
-namespace IkimeaCKEditorBundle\Twig\Extension;
+namespace Ikimea\CKEditorBundle\Twig\Extension;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class IkimeaCKEditorExtension {
+class IkimeaCKEditorExtension extends \Twig_Extension {
+
+    private $container;
 
     public function getFunctions() {
         return array(
@@ -23,15 +23,41 @@ class IkimeaCKEditorExtension {
     }
 
     /**
-     * TinyMce initializations
+     * Container
+     *
+     * @var ContainerInterface
+
+
+      /**
+     * Initialize CKEditor helper
+     *
+     * @param ContainerInterface $container
+     */
+    public function __construct($container) {
+
+        $this->container = $container;
+    }
+
+    /**
+     * @return ContainerInterface
+     */
+    public function getContainer() {
+        return $this->container;
+    }
+
+    /**
+     * Returns a list of functions to add to the existing list.
+     *
+     * @return array An array of functions
      */
     public function ckeditor_init() {
+
         //$assets = $this->getContainer()->get('templating.helper.assets');
-        return ($this->getContainer()->get('templating')->render('IkimeaCkeditorBundle:Script:init.html.twig', array(
-                    'ckeditor_config_json' => json_encode($this->getContainer()->getParameter('ikimea_ckeditor.config'))
-        )));
+        return ($this->getContainer()->get('templating')->render('IkimeaCKEditorBundle:Script:init.html.twig'));
     }
-    public function getName(){
+
+    public function getName() {
         return 'ikimea_ckeditor';
     }
+
 }
