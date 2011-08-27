@@ -8,7 +8,7 @@
 */
 
 
-namespace Ikimea\CKeditortBundle\DependencyInjection;
+namespace Ikimea\CKeditorBundle\DependencyInjection;
 
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
