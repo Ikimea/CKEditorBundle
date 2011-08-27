@@ -9,10 +9,10 @@
 */
 
 
-namespace Ikimea\CKeditortBundle;
+namespace Ikimea\CKeditorBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class CKeditortBundle extends Bundle{
+class CKeditorBundle extends Bundle{
     
 }
