@@ -1,0 +1,22 @@
+{% form_theme form _self %}
+
+{% block ckeditor_widget %}
+{% spaceless %}
+    <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+   
+    <script type="text/javascript" src="/bundles/ikimeackeditor/js/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+        CKEDITOR.replace("{{ id }}",{
+            toolbar: {{ toolbar | json_encode | raw }},
+            skin : 'adefault', 
+        });
+        CKEDITOR.basePath = "{{ asset('bundles/ikimeackeditor/js/ckeditor/')|raw }}";
+        
+        CKEDITOR.editorConfig = function( config ){
+         config.language = 'fr';
+        }
+        CKEDITOR.config.contentsCss='/bundles/ikimeackeditor/js/ckeditor/contents.css';
+        CKEDITOR.config.customConfig='/bundles/ikimeackeditor/js/ckeditor/config.js';
+    </script>
+{% endspaceless %}
+{% endblock %}
