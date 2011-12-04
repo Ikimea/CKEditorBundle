@@ -3,5 +3,7 @@
     CKEDITOR.basePath = {{ asset('bundles/ikimeackeditor/')|raw }};
     CKEDITOR.editorConfig = function( config ){
          config.language = 'fr';
+         config.customConfig = {{ asset('bundles/ikimeackeditor/js/ckeditor/config.js')|raw }}''
     }
+    CKEDITOR.config.contentsCss='/bundles/ikimeackeditor/js/ckeditor/fr/contents.css';
 </script>
