@@ -15,7 +15,7 @@ class Configuration {
     public function getConfigTree()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('ikimea_ckeditor', 'array');
+        $rootNode = $treeBuilder->root('ikimea_ck_editor', 'array');
         $rootNode
             ->children()
                 ->scalarNode('config')
