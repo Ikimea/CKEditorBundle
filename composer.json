@@ -17,5 +17,5 @@
     "autoload": {
         "psr-0": { "Ikimea\\CKEditorBundle": "" }
     },
-    "target-dir": "IkimeaCKEditorBundle"
+    "target-dir": "Ikimea/CKEditorBundle"
 }
