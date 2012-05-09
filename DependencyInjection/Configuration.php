@@ -21,7 +21,7 @@ class Configuration {
                 ->scalarNode('config')
                     ->children()
                         ->scalarNode('lang')->cannotBeEmpty()->end()
-
+				->scalarNode('toolbar')
                 ->end();
         return $treeBuilder->buildTree();
     }

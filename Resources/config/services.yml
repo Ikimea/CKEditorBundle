@@ -1,0 +1,9 @@
+parameters:
+  form.type.ckeditor.class: Ikimea\CKEditorBundle\Form\Type\CKEditorType
+  
+
+services:
+  twig.extension.ikimea_ckeditor:
+    class: Ikimea\CKEditorBundle\Twig\Extension\IkimeaCKEditorExtension
+     tags:
+            -  { name: twig.extension }

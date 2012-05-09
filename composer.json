@@ -1,0 +1,21 @@
+{
+    "name": "ikimea/ckeditor-bundle",
+    "type": "symfony-bundle",
+    "description": "Integrate CKEditor with Symfony2 ",
+    "keywords": ["components", "ckeditor", "bundle"],
+    "homepage": "https://github.com/Ikimea/CKEditorBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mbechezi Mlanawo",
+            "email": "mlanawo.mbechezi@ikimea.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+    },
+    "autoload": {
+        "psr-0": { "Ikimea\\CKEditorBundle": "" }
+    },
+    "target-dir": "IkimeaCKEditorBundle"
+}
