@@ -9,7 +9,7 @@
 */
 
 
-namespace Ikimea\CKeditorBundle;
+namespace Ikimea\CKEditorBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
