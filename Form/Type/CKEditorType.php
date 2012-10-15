@@ -13,10 +13,23 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 /**
  * CKEditor type
  *
- * @inspire GeLo <geloen.eric@gmail.com>
  */
 class CKEditorType extends AbstractType
 {
+    /**
+     * Symfony\Component\DependencyInjection\Container
+     */
+    private $container;
+
+
+    /**
+     * @param $container
+     */
+    public function __construct($container)
+    {
+        $this->container = $container;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -25,15 +38,16 @@ class CKEditorType extends AbstractType
         $builder
             ->setAttribute('toolbar', $options['toolbar']);
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['toolbar'] =  $form->getAttribute('toolbar');
+        $view->vars['skin'] =  'adefault';
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -54,7 +68,7 @@ class CKEditorType extends AbstractType
                     'name' => 'basicstyles',
                     'items' => array('Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat')
                 ),
-               
+
                 array(
                     'name' => 'paragraph',
                     'items' => array('NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-')
@@ -88,7 +102,7 @@ class CKEditorType extends AbstractType
         ));
     }
 
-    
+
     /**
      * {@inheritdoc}
      */

@@ -2,8 +2,8 @@
 
 {% block ckeditor_widget %}
 {% spaceless %}
+
     <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
-   
     <script type="text/javascript" src="/bundles/ikimeackeditor/js/ckeditor/ckeditor.js"></script>
     <script type="text/javascript">
         {% autoescape true js %}
@@ -13,7 +13,7 @@
             }
             CKEDITOR.replace("{{ id }}",{
                 toolbar: {{ toolbar | json_encode | raw }},
-                skin : 'adefault'
+                skin : '{{ skin }}'
             });
             CKEDITOR.basePath = "{{ asset('bundles/ikimeackeditor/js/ckeditor/')|raw }}";
 

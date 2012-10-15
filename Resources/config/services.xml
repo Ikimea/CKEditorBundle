@@ -7,11 +7,8 @@
         <parameter key="form.type.ckeditor.class">Ikimea\CKEditorBundle\Form\Type\CKEditorType</parameter>
     </parameters>
     <services>
-        <service id="twig.extension.ikimea_ckeditor" class="Ikimea\CKEditorBundle\Twig\Extension\IkimeaCKEditorExtension">
-            <argument type="service" id="service_container"></argument>
-            <tag name="twig.extension" alias="ikimea_ckeditor" />
-        </service>
          <service id="form.type.ckeditor" class="%form.type.ckeditor.class%">
+             <argument type="service" id="service_container"></argument>
             <tag name="form.type" alias="ckeditor" />
         </service>
     </services>

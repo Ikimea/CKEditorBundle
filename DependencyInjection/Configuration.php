@@ -7,7 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
- 
+
 namespace Ikimea\CKEditorBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\NodeBuilder;
@@ -19,7 +19,7 @@ class Configuration {
      *
      * @return \Symfony\Component\DependencyInjection\Configuration\NodeInterface
      */
-    
+
     public function getConfigTree()
     {
         $treeBuilder = new TreeBuilder();
@@ -28,10 +28,11 @@ class Configuration {
             ->children()
                 ->scalarNode('config')
                     ->children()
-                        ->scalarNode('lang')->cannotBeEmpty()->end()
+                        ->scalarNode('lang')->defaultValue('adefault')->cannotBeEmpty()->end()
+                        ->scalarNode('skin')->cannotBeEmpty()->end()
 				->scalarNode('toolbar')
                 ->end();
         return $treeBuilder->buildTree();
     }
-    
+
 }
