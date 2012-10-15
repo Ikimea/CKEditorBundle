@@ -17,6 +17,20 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
  */
 class CKEditorType extends AbstractType
 {
+
+    /**
+     * @var
+     */
+    private $container;
+
+    /**
+     * @param $container
+     */
+    public function __construct($container)
+    {
+        $this->container = $container;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -25,15 +39,17 @@ class CKEditorType extends AbstractType
         $builder
             ->setAttribute('toolbar', $options['toolbar']);
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
+        $view->vars['path'] =  $this->container->getParameter('ikimea_ck_editor.src');
+        $view->vars['skin'] =  $this->container->getParameter('ikimea_ck_editor.skin');
         $view->vars['toolbar'] =  $form->getAttribute('toolbar');
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -54,7 +70,6 @@ class CKEditorType extends AbstractType
                     'name' => 'basicstyles',
                     'items' => array('Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat')
                 ),
-               
                 array(
                     'name' => 'paragraph',
                     'items' => array('NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-')
@@ -88,7 +103,7 @@ class CKEditorType extends AbstractType
         ));
     }
 
-    
+
     /**
      * {@inheritdoc}
      */

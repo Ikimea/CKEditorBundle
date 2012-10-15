@@ -19,7 +19,20 @@ use Symfony\Component\Config\FileLocator;
 
 class IkimeaCKEditorExtension extends Extension {
 
-    public function load(array $configs, ContainerBuilder $container) {
+    /**
+     * {@inheritDoc}
+     */
+    public function load(array $configs, ContainerBuilder $container)
+    {
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
+
+        foreach($config as $key => $param) {
+            $container->setParameter('ikimea_ck_editor.'.$key, $param);
+        }
+
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader->load('services.xml');
 
         $container->setParameter('twig.form.resources', array_merge(
             $container->getParameter('twig.form.resources'), array('IkimeaCKEditorBundle:Form:ckeditor_widget.html.twig')
@@ -27,11 +40,13 @@ class IkimeaCKEditorExtension extends Extension {
 
 
 
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-        $loader->load('services.xml');
     }
 
-    public function getAlias() {
+    /**
+     * @return string
+     */
+    public function getAlias()
+    {
         return 'ikimea_ck_editor';
     }
 
