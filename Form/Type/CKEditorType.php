@@ -59,25 +59,19 @@ class CKEditorType extends AbstractType
             'required' => false,
             'toolbar' => array(
                 array(
-                    'name' => 'clipboard',
-                    'items' => array('PasteText','PasteFromWord','-','Undo','Redo')
-                ),
-                array(
-                    'name' => 'editing',
-                    'items' => array('-','-','SpellChecker', 'Scayt')
+                    'items' => 'Format'
                 ),
                 array(
                     'name' => 'basicstyles',
-                    'items' => array('Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat')
+                    'items' => array('Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat', '-', 'TextColor')
                 ),
                 array(
                     'name' => 'paragraph',
-                    'items' => array('NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-')
+                    'items' => array('NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-')
                 ),
-                '/',
                 array(
                     'name' => 'links',
-                    'items' => array('Link','Unlink','Anchor')
+                    'items' => array('Link','Unlink')
                 ),
                 array(
                     'name' => 'insert',
@@ -88,12 +82,8 @@ class CKEditorType extends AbstractType
                     'items' => array('Styles','Format','FontSize')
                 ),
                 array(
-                    'name' => 'colors',
-                    'items' => array('TextColor','BGColor')
-                ),
-                array(
                     'name' => 'tools',
-                    'items' => array('Maximize', 'ShowBlocks', '-', 'Source')
+                    'items' => array('Maximize', '-', 'Source')
                 )
             )
         ));

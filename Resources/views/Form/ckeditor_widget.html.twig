@@ -2,13 +2,18 @@
 
 {% block ckeditor_widget %}
 {% spaceless %}
-    <script type="text/javascript" src="  {{ path }}ckeditor.js"></script>
+    <script type="text/javascript" src="{{ path }}/ckeditor.js"></script>
+    <textarea {{ block('widget_attributes') }} >{{ value }}</textarea>
     <script type="text/javascript">
         {% autoescape true js %}
-        CKEDITOR.replace("{{ id }}");
+        window.onload =  function(){
+            CKEDITOR.replace('{{ id }}', {
+                toolbar: {{ toolbar | json_encode | raw }}
+            });
+        };
         CKEDITOR.skinName = '{{ skin }}';
         {% endautoescape %}
     </script>
-    <textarea {{ block('widget_attributes') }} class="ckeditor">{{ value }}</textarea>
+
 {% endspaceless %}
 {% endblock %}

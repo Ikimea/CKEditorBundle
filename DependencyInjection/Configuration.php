@@ -29,8 +29,8 @@ class Configuration implements ConfigurationInterface
         $treeBuilder->root('ikimea_ck_editor')
             ->children()
                 ->scalarNode('lang')->end()
-                ->scalarNode('skin')->defaultValue('kama')->cannotBeEmpty()->end()
-				->scalarNode('toolbar')->end()
+                ->scalarNode('skin')->defaultValue('moono')->cannotBeEmpty()->end()
+				->arrayNode('toolbar')->ignoreExtraKeys()->end()
 				->scalarNode('src')->end()
                 ->end();
         return $treeBuilder;
