@@ -4,7 +4,8 @@ CKEditor est un éditeur de texte pour être utilisé dans les pages Web. Il s'a
 
 
 
-== Features
+Features
+=================
 
 * Symfony2 integration
 
@@ -45,6 +46,8 @@ Configuration
 
 Simply configure as many paths as needed with the given parameters:
 
+
+
 ``` yaml
 # app/config.yml
 ikimea_ck_editor:
@@ -59,9 +62,11 @@ ikimea_ck_editor:
       - ['-','Link','Unlink','Anchor','-','Table']
       - ['Maximize','Source']
 
+```
 
 Usage
 =============
+
 
 ```php
 /** @var $builder FormBuilderInterface */
