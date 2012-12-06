@@ -1,5 +1,13 @@
 <?php
 
+/*
+* This file is part of CKEditortBundle
+* (c) 2011-2012 Mbechezi Mlanawo
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+
 namespace Ikimea\CKEditorBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
@@ -11,9 +19,9 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 
 /**
- * CKEditor type
+ * CKEditor Form type
  *
- * @inspire GeLo <geloen.eric@gmail.com>
+ * @author Mlanawo Mbechezi <mlanawo.mbechezi.com>
  */
 class CKEditorType extends AbstractType
 {

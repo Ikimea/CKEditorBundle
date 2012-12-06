@@ -1,12 +1,12 @@
 <?php
 
 /*
- * This file is part of CKeditorBundle
- * (c) 2011 Mbechezi Mlanawo
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+* This file is part of CKEditortBundle
+* (c) 2011-2012 Mbechezi Mlanawo
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
 
 namespace Ikimea\CKEditorBundle\DependencyInjection;
 
@@ -16,7 +16,10 @@ use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\Config\FileLocator;
 
-
+/**
+ *
+ * @author Mlanawo Mbechezi <mlanawo.mbechezi.com>
+ */
 class IkimeaCKEditorExtension extends Extension
 {
 
