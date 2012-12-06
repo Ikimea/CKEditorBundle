@@ -12,11 +12,11 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",
-        "symfony/form": "2.1.x-dev",
-        "twig/extensions": "1.0.x-dev"
+        "php": ">=5.3.3"
     },
     "require-dev": {
+        "symfony/form": "2.1.x-dev",
+        "twig/extensions": "1.0.x-dev",
         "symfony/dom-crawler": "2.1.x-dev",
         "symfony/browser-kit": "2.1.x-dev",
         "symfony/framework-bundle": "2.1.x-dev",
