@@ -1,3 +1,7 @@
+# This project is no longer maintained by Ikimea
+Use [IvoryCKEditorBundle](https://github.com/egeloen/IvoryCKEditorBundle) instead
+-------------------------------------------------------------------
+
 ##Ckeditor
 
 CKEditor est un éditeur de texte pour être utilisé dans les pages Web. Il s'agit d'un éditeur WYSIWYG, ce qui signifie que le texte en cours d'édition sur il semble aussi semblables que possible aux utilisateurs résultats ont quand le publier. Il apporte les fonctionnalités d'édition web communes trouvées sur les applications de bureau d'édition telles que Microsoft Word et OpenOffice.
